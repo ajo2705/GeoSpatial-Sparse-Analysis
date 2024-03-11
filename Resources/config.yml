@@ -1,4 +1,4 @@
-model: CatBoost
+model: RandomForest
 class: RFModel
 # HYPER PARAM CONFIGURATION FOR OPTUNA TRAINING
 hyperparameter:
