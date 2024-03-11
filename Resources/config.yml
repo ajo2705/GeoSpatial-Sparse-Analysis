@@ -1,2 +1,29 @@
 model: CatBoost
 class: RFModel
+# HYPER PARAM CONFIGURATION FOR OPTUNA TRAINING
+hyperparameter:
+    log_path: "RFLog"
+    metric: "MSE"
+random_forest_trainers:
+  n_estimators:
+    type: int
+    limits:
+      - 2
+      - 150
+  max_depth:
+    type: int
+    limits:
+      - 1
+      - 32
+  min_samples_list:
+    type: float
+    limits:
+      - 0.1
+      - 1
+  min_samples_leaf:
+    type: float
+    limits:
+      - 0.1
+      - 0.5
+      -
+# TODO: Add another hyperparameter vectors for other models
