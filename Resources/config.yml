@@ -1,6 +1,7 @@
 model: RandomForest
 class: RFModel
 # HYPER PARAM CONFIGURATION FOR OPTUNA TRAINING
+hyperparameter_training: true
 hyperparameter:
     log_path: "RFLog"
     metric: "MSE"

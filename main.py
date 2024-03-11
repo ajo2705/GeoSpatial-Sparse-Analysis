@@ -15,6 +15,7 @@ lib_locations = [os.path.join(BASE_PATH, lib) for lib in [LIB, RASTERS, HYPERPAR
 sys.path.extend(lib_locations)
 
 from raster_processor.raster_converter_linear import process_raster
+from hyperparam_train.optuna_training import optuna_trainer
 from libraries.config_manager import ConfigManager
 from libraries.constants import ConfigParams
 
@@ -30,6 +31,10 @@ class_mapper = {"RandomForest": "train_random_forest",
 def train_test():
     config_manager = ConfigManager()
     module_name = config_manager.get_config_parameter(ConfigParams.MODEL_NAME)
+
+    if config_manager.get_config_parameter(ConfigParams.USE_HYPERPARAMETER_TRAINING):
+        optuna_trainer()
+
     file_path = "linear_train_test/" + class_mapper[module_name] + ".py"
     module_name = "train_test"
 
@@ -42,3 +47,5 @@ def train_test():
 
 if __name__ == '__main__':
     train_test()
+    # For raster processing
+    # process_raster()

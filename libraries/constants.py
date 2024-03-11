@@ -48,6 +48,7 @@ class ConfigParams:
     MIN_SAMPLE_LEAF = RF_TRAINERS + "/min_samples_leaf"
 
     HYPERPARAMETER = "hyperparameter"
+    USE_HYPERPARAMETER_TRAINING = "hyperparameter_training"
     LOG_PATH = HYPERPARAMETER + "/log_path"
     METRIC = HYPERPARAMETER + "/metric"
 
